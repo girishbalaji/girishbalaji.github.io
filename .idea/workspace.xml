@@ -28,7 +28,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/js/umd/tab.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/js/umd/tooltip.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/js/umd/util.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PersonalWebsite.iws" />
     <ignored path=".idea/workspace.xml" />

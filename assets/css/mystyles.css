@@ -1,149 +1,242 @@
 .jumbotron {
-    height: 100%;
-    width: 100% ;
+  height: 100%;
+  width: 100% ;
 }
 
-b {
-    color: chartreuse;
+.vertical-center {
+  vertical-align: middle;
+}
+
+p b {
+  color: chartreuse;
+}
+
+.divImg b {
+  color: chartreuse;
 }
 
 .jumbotron h1 {
-    border-bottom: 1px solid whitesmoke;
-    padding-bottom: 10px;
-    font-family: "Source Sans Pro";
+  border-bottom: 1px solid whitesmoke;
+  padding-bottom: 10px;
+  font-family: "Source Sans Pro";
 }
 
-.makeDisappear {
-    display: none;
-}
 
 .row-header {
-    margin: 0px auto;
-    padding: 0px 0px;
+  margin: 0px auto;
+  padding: 0px 0px;
 }
-.col-xs-12 {
-    overflow: hidden;
+.container {
+  overflow: hidden;
 }
 
 .full-slide{
-    position: relative;
-    height: 100vh;
-    margin: 0;
-    /*border: solid 10px yellow;*/
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  padding-top: 0;
+  top: 0;
+}
+.borderLine1 {
+  border: solid 1px yellow;*/
 }
 
 .slide {
-    position: relative;
-    margin: 0;
-    width: 100%;
+  position: relative;
+  margin: 0;
+  width: 100%;
 }
 
 .divImg {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: 100%;
-    width: 100%;
-    border: solid #0a0114 .5px;
-    background-color: #200612;
-    opacity: 1;
-    overflow: hidden;
-    /*-webkit-animation-delay: 5s;
-    -webkit-animation-duration: 1.5s;*/
-}
-
-.divImgBackground {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0%;
-    top: 0%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  border: solid #0a0114 .5px;
+  background-color: #130109;
+  opacity: 1;
+  overflow: hidden;
+  /*-webkit-animation-delay: 5s;
+  -webkit-animation-duration: 1.5s;*/
 }
 
 .tileCaption {
-    position: inherit;
-    padding-left: 10px;
-    width: 90%;
-    text-align: left;
-    top: 0%;
+  position: inherit;
+  padding-left: 10px;
+  width: 90%;
+  text-align: left;
+  top: 0%;
 }
 
-.tileCaption h2 {
-    transform: translate(-25%);
-    visibility: hidden;
+.affix {
+  top: 0;
+  width: 100%;
+}
+
+.tileCaption h3 {
+  transform: translate(-25%);
+  visibility: hidden;
+  padding-bottom: 5px;
+  border-bottom: solid whitesmoke .5px;
+  line-height: 100%;
 }
 .tileCaption p {
-    transform: translate(25%);
-    visibility: hidden;
+  transform: translate(25%);
+  visibility: hidden;
+}
+
+.aboutMe {
+  padding-bottom: 5%;
+  padding-top: 2%;
 }
 
 
+.aboutMe h1 {
+  font-size: 350%;
+}
+
+.aboutMe h4 {
+  font-family: "Source Sans Pro";
+  font-size: 26px;
+  font-weight: 200;
+  line-height: 200%;
+}
+
+.aboutMe p {
+  font-family: "Source Sans Pro";
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 130%;
+}
+
+.portfolio {
+  padding-top: 2%;
+  padding-bottom: 5%;
+}
+
 .topLayer {
-    background-color: #13000b;
-    opacity: 0;
-    transition: opacity .5s;
+  background-color: #13000b;
+  opacity: 0;
+  transition: opacity 1s;
 }
 
 .topLayer:hover{
-    opacity: .95;
-    transition: opacity .5s;
+  opacity: .95;
+  transition: opacity .5s;
 }
 
-.topLayer:hover .tileCaption h2{
-    visibility: visible;
-    transform: translate(0);
-    transition: transform 1s;
+.topLayer:hover .tileCaption h3{
+  visibility: visible;
+  transform: translate(0);
+  transition: transform 1s;
 }
 .topLayer:hover .tileCaption p{
-    visibility: visible;
-    transform: translate(0);
-    transition: transform 1s;
+  visibility: visible;
+  transform: translate(0);
+  transition: transform 1s;
 }
 
 
 #outerDivImg {
-    opacity: 0;
+  opacity: 0;
 }
 
 #goDown {
-    margin-top: 5%;
+  margin-top: 5%;
+}
+
+.accordionLogo {
+  display: block;
+  margin: auto;
+  width: 100%;
 }
 
 /*First Slide */
 #firstSlideHeading{
-    font-variant: small-caps;
-    text-align: center;
-    font-family: "Source Sans Pro";
-    font-weight: 700;
+  font-variant: small-caps;
+  text-align: center;
+  font-family: "Source Sans Pro";
+  font-weight: 700;
 }
 
 #firstSlideText{
-    text-align: center;
-    font-weight: 200;
-    font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+  font-weight: 200;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .layer {
-    background-color: midnightblue;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  background-color: #0a0114;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.img-full-size {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 
 #goDown {
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-delay: 5s;
-    -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-delay: 5s;
+  -webkit-animation-duration: 1.5s;
 }
 
+}
+.navbar-inverse .navbar-nav > .open > a:hover {
+  background: #1a237e;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav > .open > a:focus {
+  background: #1a237e;
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+  background-color: #303f9f;
+  color: #eeeeee;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
+  color: #000000;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu {
+  background-color: #303f9f;
+  color: #eeeeee;
+}
+address {
+  color: #0f0f0f;
+  font-size: 80%;
+  margin: 0px;
+}
+
+.tab-content {
+  border-bottom: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  padding: 10px;
+}
+.affix {
+  top: 100px;
+}
+
+
+body {
+  align: center;
+  padding: 0;
+  z-index: 1;
+}

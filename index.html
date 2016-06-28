@@ -26,131 +26,283 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body style="background-color: #0a0114">
-    <header class="jumbotron container full-slide">
-        <!--div class="container-fluid">-->
-        <div class="background">
-            <div class="layer"></div>
-            <img src="assets/images/mountainwithstars.jpg"
-                 style="position: absolute; height: 100%; width: 100%; opacity: 70%" >
-        </div>
-
-        <div style="color: whitesmoke">
-            <!-- SLIDE ONE -->
-            <div class="row">
-                <div class="col-xs-8 col-xs-offset-2 col-xs col-sm-6 col-sm-offset-3 text-center">
-                    <h1 id="firstSlideHeading" style="padding-top: 25%;">Girish Balaji</h1>
-                    <p id="firstSlideText">Welcome to my website!</p>
-                    <span class="glyphicon glyphicon-chevron-down
-                    animated bounce" id="goDown"></span>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="200" style="background-color: #0a0114">
+    <header class="jumbotron full-slide">
+        <div class="container">
+            <!--div class="container-fluid">-->
+            <div class="background">
+                <div class="layer"></div>
+                <img src="assets/images/mountainwithstars.jpg"
+                     style="position: absolute; height: 100%; width: 100%; opacity: .6" >
+            </div>
+            <div style="color: whitesmoke">
+                <!-- SLIDE ONE -->
+                <div class="row">
+                    <div class="col-xs-8 col-xs-offset-2 col-xs col-sm-6 col-sm-offset-3 text-center">
+                        <h1 id="firstSlideHeading" style="padding-top: 25%;">Girish Balaji</h1>
+                        <p id="firstSlideText">Welcome to my website!</p>
+                        <span class="glyphicon glyphicon-chevron-down
+                        animated bounce" id="goDown"></span>
+                    </div>
                 </div>
             </div>
+            <!--</div>-->
         </div>
-
-        <!--</div>-->
     </header>
 
-    <!--<div class="container slide">-->
-    <div class="container text-center" style="color: whitesmoke; width: 100%">
-        <div class="row borderLine">
-            <div class="col-xs-12 col-sm-6 col-md-4" style="height: 33vh">
-                <div class="divImg"
-                     style="background-color: #0a0114;">
-                    <div class="text-center divImg" style="width: 60%; height: 60%; background-color: inherit; opacity: 1">
-                        <h2>A <b>snapshot</b> of my portfolio</h2>
+    <div class="container aboutMe" style="margin-top: 10px">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10">
+                <div id="history" class="row" style="color: whitesmoke">
+                    <div class="col-xs-12 col-sm-8">
+                        <div class="row">
+                            <h1 class="display-1">
+                                <b>GIRISH</b> BALAJI
+                            </h1>
+                            <hr style="width: 75%; margin-left: 1%">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-5">
+                                <h4>
+                                    Trying to learn how to use software to
+                                    make a <b style="color: chocolate">genuine impact</b> on people's lives.
+                                </h4>
+                            </div>
+                            <div class="col-xs-12 col-sm-offset-1 col-sm-6">
+                                <p style="padding-top: 5%">I'm a sophomore at UC Berkeley studying
+                                    <span>Electrical Engineering and Computer Science.</span>
+                                    I'm fascinated by the prospects of <b>clean energy</b> and
+                                    it's growing capability to expand global energy and
+                                    health care access. <br><br>Ultimately, I aim to use software
+                                    to make the world a more <b>sustainable</b>, <b>secure</b> and
+                                    <b>equitable</b> place to live in.
+                                </p>
+                                <p>Want to chat? &nbsp; &nbsp; <a class="btn btn-primary btn-m" href="#">Let's talk! &raquo;</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-offset-1 col-sm-3">
+                        <div class="row">
+                            <div class="col-xs-8 col-sm-12" style="padding: 2px; height: 35vh">
+                                <img class="img-full-size" src="assets/images/SketchSpeaking_without_background.jpg">
+                            </div>
+                            <div class="col-xs-12" style="padding:2px; height: 30vh">
+                                <img class="img-full-size" src="assets/images/Solar-Panels-For-Home-Petaluma.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="corporate" class="row row-content borderLine1">
+                    <div>
+                        <h2 style="color:whitesmoke; border-bottom: solid whitesmoke 1px">Experience</h2>
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <!--CEO Panel-->
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingKaiser"  style="background-color: black; height: 100%; width: 100%">
+                                    <div class="row borderLine1">
+                                        <div class="panel-title col-xs-offset-1 col-xs-6 col-sm-offset-2 col-sm-5 text-center vertical-center borderLine1">
+                                            <a role="button" data-toggle="collapse"
+                                               data-parent="#accordion" href="#peter"
+                                               aria-expanded="true" aria-controls="peter">
+                                               <h3 style="font-variant: small-caps">Kaiser Permanente</h3><h5><b>DEVOPS INTERN</b></h5></a>
+                                            <h5 style="text-align: left">A non-profit committed to provide <b style="color: tomato">high-quality, affordable health care</b> services and to improve the health of our members and the communities we serve.</h5>
+                                        </div>
+                                        <div class="col-xs-5
+                                         col-sm-offset-1 col-sm-3
+                                         borderLine1">
+                                            <img class="accordionLogo" src="assets/images/transparentKaiserLogo.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- NOTE the class is 'collapse in' so this will be the one to show up'-->
+                                <div role="tabpanel" class="panel-collapse collapse"
+                                     id="peter"    aria-labelledby="headingPeter">
+                                    <div class="panel-body">
+                                        <p> Our CEO, Peter, credits his hardworking East Asian immigrant parents who undertook the arduous journey to the shores of America with the intention of giving their children the best future. His mother's wizardy in the kitchen whipping up the tastiest dishes with whatever is available inexpensively at the supermarket, was his first inspiration to create the fusion cuisines for which <em>The Frying Pan</em> became well known. He brings his zeal for fusion cuisines to this restaurant, pioneering cross-cultural culinary connections. </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--CFO Panel-->
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingDanny">
+                                    <div class="row borderLine1">
+                                        <div class="panel-title col-xs-offset-1 col-xs-6 text-center vertical-center borderLine1">
+                                            <a role="button" data-toggle="collapse"
+                                               data-parent="#accordion" href="#danny"
+                                               aria-expanded="true" aria-controls="danny">
+                                                <h3 style="font-variant: small-caps">New Sun Road</h3><h5><b>ANDROID DEVELOPER</b></h5></a>
+                                            <h6 style="text-align: left">A benefit corporation startup committed to provide <b style="color: tomato">sustainable, renewable, and reliable</b> energy to <b style="color: tomato">rural Ugandan communities</b>.</h6>
+                                        </div>
+                                        <div class="col-xs-5
+                                         col-sm-offset-1 col-sm-3
+                                         borderLine1">
+                                            <img class="accordionLogo" src="assets/images/newSunRoadLogo.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="panel-collapse collapse"
+                                     id="danny"    aria-labelledby="headingDanny">
+                                    <div class="panel-body">
+                                        <p>Our CFO, Danny, as he is affectionately referred to by his colleagues, comes from a long established family tradition in farming and produce. His experiences growing up on a farm in the Australian outback gave him great appreciation for varieties of food sources. As he puts it in his own words, <em>Everything that runs, wins, and everything that stays, pays!</em></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--CTO Panel-->
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingAgumbe">
+                                    <div class="row borderLine1">
+                                        <div class="panel-title col-xs-offset-1 col-xs-6 text-center vertical-center borderLine1">
+                                            <a role="button" data-toggle="collapse"
+                                               data-parent="#accordion" href="#agumbe"
+                                               aria-expanded="true" aria-controls="agumbe">
+                                                <h3 style="font-variant: small-caps">HD Runners</h3><h5><b>TECHNICAL INTERN</b></h5></a>
+                                            <h6 style="text-align: left">A nonprofit volunteer organization committed to provide <b style="color: tomato">high quality</b> video and race data for track and cross country races <b style="color: tomato">across California</b> .</h6>
+                                        </div>
+                                        <div class="col-xs-5
+                                         col-sm-offset-1 col-sm-3
+                                         borderLine1">
+                                            <img class="accordionLogo" src="assets/images/hdRunnersTempLogo.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="panel-collapse collapse"
+                                     id="agumbe"    aria-labelledby="headingAgumbe">
+                                    <div class="panel-body">
+                                        <p>Blessed with the most discerning gustatory sense, Agumbe, our CTO, personally ensures that every dish that we serve meets his exacting tastes. Our chefs dread the tongue lashing that ensues if their dish does not meet his exacting standards. He lives by his motto, <em>You click only if you survive my lick.</em></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Executive Chef Panel-->
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingAlberto">
+                                    <div class="row borderLine1">
+                                        <div class="panel-title col-xs-offset-1 col-xs-6 text-center vertical-center borderLine1">
+                                            <a role="button" data-toggle="collapse"
+                                               data-parent="#accordion" href="#alberto"
+                                               aria-expanded="true" aria-controls="alberto">
+                                                <h3 style="font-variant: small-caps">USC Loker Hydrocarbon Institute</h3><h5><b>LAB ASSISTANT</b></h5></a>
+                                            <h6 style="text-align: left">A research organization committed to develop <b style="color: tomato">innovative technologies</b> for <b style="color: tomato">resilient, robust, and grid-scale</b> energy storage.</h6>
+                                        </div>
+                                        <div class="col-xs-5
+                                         col-sm-offset-1 col-sm-3
+                                         borderLine1">
+                                            <img class="accordionLogo" src="assets/images/uscLabLogo.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="panel-collapse collapse"
+                                     id="alberto"    aria-labelledby="headingAlberto">
+                                    <div class="panel-body">
+                                        <p>Working with a small team to develop an Android application to be used by our Ugandan customers (small businesses)</p>
+                                        <p>Integrating a dynamic survey and a convenient front end interface (mainly Java/ Android studio) to include payment processing and personalized customer profiles.</p>
+                                        <p>Integrating a method to process data for analytics to better serve customized plans for our customers</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p style="padding:20px;"></p>
+                    </div>
+                </div>
+
+                <div id="facts" class="row borderLine1 text-center portfolio" style="color: whitesmoke;">
+                    <div class="col-xs-12 col-sm-6 col-md-4" style="height: 33vh">
+                        <div class="divImg"
+                             style="background-color: #0a0114;">
+                            <div class="text-center divImg" style="width: 60%; height: 60%; background-color: inherit; opacity: 1">
+                                <h2>A <b>snapshot</b> of my portfolio</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4" style="height: 33vh;">
+                        <div class="divImg">
+                            <img src="assets/images/textEditor.png"
+                                 style="height: 100%; width: 100%;">
+                        </div>
+                        <div class="divImg topLayer">
+                            <div class="tileCaption">
+                                <h3>Text Editor</h3>
+                                <p>A complete text editor supporting all essential features to upload, edit, save text on a user friendly platform.</p>
+                                <p><b>Technologies: </b>Java, JavaFX</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4" style="height: 33vh">
+                        <div class="divImg">
+                            <img src="assets/images/bearMaps.png"
+                                 style="height: 100%; width: 100%;">
+                        </div>
+                        <div class="divImg topLayer">
+                            <div class="tileCaption">
+                                <h3>Bear Maps</h3>
+                                <p>A Google Maps-like platform supporting optimal routing, rastering, and search for the Berkeley area.</p>
+                                <p><b>Technologies: </b>Java</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4" style="height: 33vh">
+                        <div class="divImg">
+                            <img src="assets/images/personalWebsite.png"
+                                 style="height: 100%; width: 100%;">
+                        </div>
+                        <div class="divImg topLayer">
+                            <div class="tileCaption">
+                                <h3>Personal Website</h3>
+                                <p>A responsive website serving as the masthead of my online presence.</p>
+                                <p><b>Technologies: </b>HTML, CSS, Javascript, Bootstrap</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4" style="height: 33vh">
+                        <div class="divImg">
+                            <img src="assets/images/androidNSRApp.png"
+                                 style="height: 100%; width: 100%;">
+                        </div>
+                        <div class="divImg topLayer">
+                            <div class="tileCaption">
+                                <h3>NSR Survey App</h3>
+                                <p>Android application to survey residents in remote locations supporting offline persistent data storage and dynamic forms.</p>
+                                <p><b>Technologies: </b>Java, Android Studio</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4" style="height: 33vh">
+                        <div class="divImg">
+                            <img src="assets/images/p1N.png"
+                                 style="height: 100%; width: 100%;">
+                        </div>
+                        <div class="divImg topLayer">
+                            <div class="tileCaption">
+                                <h3>P1N (CalHacks 2015)</h3>
+                                <p>Android application supporting bluetooth wireless communication with a mechanical dorm room door unlocker.</p>
+                                <p><b>Technologies: </b>Arduino C, Android Studio</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-4" style="height: 33vh;">
-                <div class="divImg">
-                    <img src="assets/images/textEditorStock.png"
-                         style="height: 100%; width: 100%;">
-                </div>
-                <div class="divImgBackground topLayer">
-                    <div class="tileCaption">
-                        <h2>Text Editor</h2>
-                        <p>A complete text editor supporting all essential features to upload, edit, save text on a user friendly platform.</p>
-                        <p><b>Technologies: </b>Java, JavaFX</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-4" style="height: 33vh">
-                <div class="divImg">
-                    <img src="assets/images/bearMapsStock.png"
-                         style="height: 100%; width: 100%;">
-                </div>
-                <div class="divImg topLayer">
-                    <div class="tileCaption">
-                        <h2>Bear Maps</h2>
-                        <p>A Google Maps-like platform supporting optimal routing, rastering, and search for the Berkeley area.</p>
-                        <p><b>Technologies: </b>Java</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-4" style="height: 33vh">
-                <div class="divImg">
-                    <img src="assets/images/personalWebsite.png"
-                         style="height: 100%; width: 100%;">
-                </div>
-                <div class="divImg topLayer">
-                    <div class="tileCaption">
-                        <h2>Personal Website</h2>
-                        <p>A responsive website serving as the masthead of my online presence.</p>
-                        <p><b>Technologies: </b>HTML, CSS, Javascript, Bootstrap</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-4" style="height: 33vh">
-                <div class="divImg">
-                    <img src="assets/images/androidNSRApp.png"
-                         style="height: 100%; width: 100%;">
-                </div>
-                <div class="divImg topLayer">
-                    <div class="tileCaption">
-                        <h2>NSR Survey App</h2>
-                        <p>Android application to survey residents in remote locations supporting offline persistent data storage and dynamic forms.</p>
-                        <p><b>Technologies: </b>Java, Android Studio</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-4" style="height: 33vh">
-                <div class="divImg">
-                    <img src="assets/images/p1N.png"
-                         style="height: 100%; width: 100%;">
-                </div>
-                <div class="divImg topLayer">
-                    <div class="tileCaption">
-                        <h2>P1N</h2>
-                        <p>Android application supporting bluetooth wireless communication with a mechanical dorm room door unlocker.</p>
-                        <p>CalHacks group project</p>
-                        <p><b>Technologies: </b>Arduino C, Android Studio</p>
-                    </div>
-                </div>
-            </div>
-
+            <nav class="hidden-xs col-sm-2" id="myScrollspy">
+                <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="650">
+                    <li><a href="#history">About Me</a></li>
+                    <li><a href="#corporate">Experience</a></li>
+                    <li><a href="#facts">Portfolio</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
 
-        <div class="container slide text-center">
-            <div class="row">
-                <div class="col-xs-12 col-sm-offset-3 col-sm-6">
-                    <h1>Personal Projects</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6" style="border: solid 1px black">
-                    hidsjdasjnddjsf
-                </div>
-                <div class="col-xs-12 col-sm-6" style="border: solid 1px black">
-                    lasajskjnsfksdjnfkdsjnf
-                </div>
-            </div>
-        </div>
     <!--</div>-->
 
 
@@ -177,7 +329,6 @@
     $(this).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
     $(this).removeClass("animated zoomIn");})
     }-->
-
 
 
 </body>

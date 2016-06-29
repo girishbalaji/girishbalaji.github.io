@@ -120,23 +120,23 @@ p b {
 .topLayer {
   background-color: #13000b;
   opacity: 0;
-  transition: opacity 1s;
+  -webkit-transition: opacity 1s;
 }
 
 .topLayer:hover{
   opacity: .95;
-  transition: opacity .5s;
+  -webkit-transition: opacity .5s;
 }
 
 .topLayer:hover .tileCaption h3{
   visibility: visible;
   transform: translate(0);
-  transition: transform 1s;
+  -webkit-transition: transform 1s;
 }
 .topLayer:hover .tileCaption p{
   visibility: visible;
   transform: translate(0);
-  transition: transform 1s;
+  -webkit-transition: transform 1s;
 }
 
 
@@ -235,6 +235,12 @@ address {
   top: 100px;
 }
 
+.sideNav {
+    font-size: large;
+    color: wheat;
+    line-height: 150%;
+    background-color: rgba(12, 12, 12, 0.86)
+}
 
 body {
   align: center;

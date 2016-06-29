@@ -2,45 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77ac6cfc-1e34-4336-a787-d6184377938e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/npm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/umd/alert.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/umd/button.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/umd/carousel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/umd/collapse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/umd/dropdown.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/umd/modal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/umd/popover.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/umd/scrollspy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/umd/tab.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/umd/tooltip.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/umd/util.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-social.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-theme.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-theme.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font-awesome.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/mystyles.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/girishbalaji.github.io" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/npm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/umd/alert.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/umd/button.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/umd/carousel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/umd/collapse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/umd/dropdown.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/umd/modal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/umd/popover.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/umd/scrollspy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/umd/tab.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/umd/tooltip.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/umd/util.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PersonalWebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,8 +26,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6597938">
-              <caret line="302" column="14" selection-start-line="302" selection-start-column="14" selection-end-line="302" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.22680412">
+              <caret line="288" column="32" selection-start-line="288" selection-start-column="32" selection-end-line="288" selection-end-column="32" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -715,8 +677,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6597938">
-          <caret line="302" column="14" selection-start-line="302" selection-start-column="14" selection-end-line="302" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.22680412">
+          <caret line="288" column="32" selection-start-line="288" selection-start-column="32" selection-end-line="288" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />

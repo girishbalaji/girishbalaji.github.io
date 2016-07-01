@@ -11,6 +11,11 @@
   margin-top: 5px
 }
 
+.slideMargin {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
 .divImg b {
   color: chartreuse;
 }

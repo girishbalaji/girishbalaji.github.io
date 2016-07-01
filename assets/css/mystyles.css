@@ -8,9 +8,6 @@
 }
 
 
-p b {
-  color: chartreuse;
-}
 
 .divImg b {
   color: chartreuse;
@@ -144,9 +141,6 @@ p b {
   opacity: 0;
 }
 
-#goDown {
-  margin-top: 5%;
-}
 
 .accordionLogo {
   display: block;
@@ -158,8 +152,29 @@ p b {
 #firstSlideHeading{
   font-variant: small-caps;
   text-align: center;
-  font-family: "Source Sans Pro";
+  font-family: "Roboto Slab" , "Source Sans Pro";
   font-weight: 700;
+}
+
+html {
+  font-family: "Abyssinica SIL";
+}
+
+#history {
+  width: 100%;
+  background-color: whitesmoke;
+}
+
+#history b {
+  color: #c70057;
+}
+
+.pictureBorder{
+  border: solid darkslategray 5px;
+}
+
+.textGrayBack {
+  background-color: rgba(0, 0, 0, 0.05)
 }
 
 #firstSlideText{
@@ -195,10 +210,26 @@ p b {
 
 #goDown {
   -webkit-animation-iteration-count: 1;
-  -webkit-animation-delay: .2s;
+  -webkit-animation-delay: 1s;
   -webkit-animation-duration: 1.5s;
 }
 
+
+#jumboText {
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: .5s;
+    -webkit-animation-duration: 1s;
+}
+
+#myScrollspy li {
+  font-family: 'Roboto';
+  font-weight: 400;
+  color: black;
+}
+
+.panel-group {
+  font-family: 'Roboto', sans-serif;
+}
 
 .navbar-inverse .navbar-nav > .open > a:hover {
   background: #1a237e;
@@ -237,9 +268,9 @@ address {
 
 .sideNav {
     font-size: large;
-    color: wheat;
+    color: black;
     line-height: 150%;
-    background-color: rgba(12, 12, 12, 0.86)
+    background-color: whitesmoke;
 }
 
 body {

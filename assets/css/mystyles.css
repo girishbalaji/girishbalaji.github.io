@@ -7,7 +7,9 @@
   vertical-align: middle;
 }
 
-
+#corporate h3 {
+  margin-top: 5px
+}
 
 .divImg b {
   color: chartreuse;

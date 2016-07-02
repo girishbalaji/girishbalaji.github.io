@@ -21,7 +21,7 @@
 }
 
 .jumbotron h1 {
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 1px solid darkslategray;
   padding-bottom: 10px;
   font-family: "Source Sans Pro";
 }
@@ -95,7 +95,7 @@
 }
 
 .aboutMe {
-  padding-bottom: 5%;
+  padding-bottom: 0;
   padding-top: 2%;
 }
 
@@ -182,7 +182,7 @@ html {
 }
 
 #facts {
-  background-color: rgba(41, 0, 255, 0.15);
+  background-color: rgba(41, 0, 255, 0.125);
 }
 
 .pictureBorder{
@@ -208,7 +208,7 @@ html {
 }
 
 .layer {
-  background-color: #0a0114;
+  background-color: rgba(207, 205, 221, 0.93);
   position: absolute;
   top: 0;
   left: 0;
@@ -293,4 +293,10 @@ body {
   align: center;
   padding: 0;
   z-index: 1;
+}
+
+.row-footer {
+  margin: 0px auto;
+  padding: 20px 0px;
+  background-color: lightgray;
 }

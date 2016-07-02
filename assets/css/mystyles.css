@@ -12,8 +12,8 @@
 }
 
 .slideMargin {
-  padding-top: 15px;
-  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 25px;
 }
 
 .divImg b {
@@ -179,6 +179,10 @@ html {
 
 #corporate {
   background-color: #e6fefe;
+}
+
+#facts {
+  background-color: rgba(41, 0, 255, 0.15);
 }
 
 .pictureBorder{

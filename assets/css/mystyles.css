@@ -12,8 +12,8 @@
 }
 
 .slideMargin {
-  margin-top: 5px;
-  margin-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 20px;
 }
 
 .divImg b {
@@ -33,7 +33,9 @@
 }
 .container {
   overflow: hidden;
+  margin-top: 0;
 }
+
 
 .full-slide{
   position: relative;
@@ -168,12 +170,15 @@ html {
 }
 
 #history {
-  width: 100%;
   background-color: whitesmoke;
 }
 
 #history b {
   color: #c70057;
+}
+
+#corporate {
+  background-color: #e6fefe;
 }
 
 .pictureBorder{

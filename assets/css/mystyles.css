@@ -185,6 +185,11 @@ html {
   background-color: rgba(41, 0, 255, 0.125);
 }
 
+.panel-collapse b {
+  color: blue;
+  font-weight: inherit;
+}
+
 .pictureBorder{
   border: solid darkslategray 5px;
 }

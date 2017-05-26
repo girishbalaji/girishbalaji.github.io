@@ -145,11 +145,6 @@
   -webkit-transition: transform 1s;
 }
 
-.nav-pills>li.active>a,
-.nav-pills>li.active>a:focus,
-.nav-pills>li.active>a:hover {
-  background-color: red;
-}
 
 #outerDivImg {
   opacity: 0;

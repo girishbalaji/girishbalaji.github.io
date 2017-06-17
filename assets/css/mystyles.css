@@ -148,7 +148,7 @@
 .nav-pills>li.active>a,
 .nav-pills>li.active>a:focus,
 .nav-pills>li.active>a:hover {
-  background-color: red;
+  background-color: blue;
 }
 
 #outerDivImg {
@@ -183,11 +183,11 @@ html {
 }
 
 #corporate {
-  background-color: #e6fefe;
+  background-color: floralwhite;
 }
 
 #facts {
-  background-color: rgba(41, 0, 255, 0.125);
+  background-color: whitesmoke;
 }
 
 .panel-collapse b {

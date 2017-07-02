@@ -32,7 +32,7 @@
     <header class="jumbotron full-slide" id="home">
         <div class="container">
             <!--div class="container-fluid">-->
-            <div class="background">
+            <div id="firstBackground" class="background">
                 <div class="layer"></div>
                 <img src="assets/images/mountains-snow-nature.jpg"
                      style="position: absolute; height: 100%; width: 100%; opacity: .6" >
@@ -486,8 +486,16 @@
 
 
             </div>
-            <nav class="hidden-xs col-sm-2" id="myScrollspy">
-                <ul class="nav nav-pills nav-stacked sideNav" data-spy="affix" data-offset-top="520">
+            <nav class=" col-xs-hidden col-sm-2" id="myScrollspy">
+                <ul class="nav nav-pills nav-stacked sideNav" data-spy="affix" style="top: 50px">
+                    <li><a href="#history">About Me</a></li>
+                    <li><a href="#corporate">Experience</a></li>
+                    <li><a href="#facts">Portfolio</a></li>
+                    <li><a href="#contactMe">Contact Me</a></li>
+                </ul>
+            </nav>
+            <nav class="visible-xs" id="myScrollspy">
+                <ul class="nav nav-pills sideNav" data-spy="affix" style="top: 50px">
                     <li><a href="#history">About Me</a></li>
                     <li><a href="#corporate">Experience</a></li>
                     <li><a href="#facts">Portfolio</a></li>
@@ -558,6 +566,11 @@
     <script src="assets/js/bootstrap.min.js"></script>
 
     <script>
+        $('#myScrollspy .nav').affix({
+            offset: {
+                top: $('#firstBackground').height() - 50
+            }
+        });
     </script>
 
     <!--function() {

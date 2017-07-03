@@ -614,6 +614,17 @@
         var collapseNav = function() {
             $("#collapsible").removeClass("in");
         }
+        var delta = 360;
+        $("#navbarToggleButton").click(function(){
+
+            $(this).css({
+                "-webkit-transform": "rotate(" + delta + "deg)",
+                "-moz-transform": "rotate(" + delta + "deg)",
+                "transform": "rotate(" + delta + "eg)", /* For modern browsers(CSS3)  */
+                "transition-duration" : ".5s"
+            });
+            delta += 360;
+        });
 
 
     </script>

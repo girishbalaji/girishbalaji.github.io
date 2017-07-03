@@ -526,22 +526,21 @@
 
 
             </div>
-            <nav class="visible-xs col-xs-12" data-spy="affix" data-offset-top="600" style="top: 3vh; z-index: 2; max-width: 50%">
-                <button class="btn-lg" data-toggle="collapse" data-target="#collapsible" id="navbarToggleButton">
+            <nav id="smallNav" class="visible-xs col-xs-12" data-spy="affix" style="top: 100px; z-index: 2; max-width: 50%">
+                <button class="btn btn-bitbucket" data-toggle="collapse" data-target="#collapsible" id="navbarToggleButton">
                     <i class="fa fa-bars" aria-hidden="true"></i></button>
                 <div class="collapse in" id="collapsible">
-                    <ul class="nav nav-pills nav-stacked sideNav" style="top: 50px; font-family: 'Roboto Slab'; ">
+                    <ul class="nav nav-pills nav-stacked sideNav" style="font-family: 'Roboto Slab'; ">
                         <li style="font-variant: small-caps; width: 100%; height: 100%; padding: 0 auto">
                             <h3 style="margin-left: 11%">Girish Balaji <br></h3>
-                            <img src="assets/images/meFBProfPic.jpg" style="border-radius: 50%; width: 25%; margin-left: 19%; margin-bottom: 5%">
-                            <div class="horizontal-list">
-                                <ul id="quickLinks" style="margin: auto; top: 0; left: 0">
+                            <div class="horizontal-list" style="border-bottom: solid black 1px; padding-bottom: 10px">
+                                <ul id="quickLinks" style="margin: auto; padding-left: 7%; top: 0; left: 0">
                                     <li><a class="btn btn-social-icon btn-linkedin btn-sm" href="https://www.linkedin.com/in/girish-balaji-53117710a?trk=hp-identity-name"><i class="fa fa-linkedin"></i></a></li>
                                     <li><a class="btn btn-social-icon btn-github btn-sm" href="https://www.github.com/girishbalaji"><i class="fa fa-github"></i></a></li>
-                                    <li><a class="btn btn-social-icon btn-social-icon btn-sm" href="https://www.dropbox.com/s/c2wfqnrjqjn9xok/052917GirishResume.pdf?dl=0"><img src="assets/images/cvicon1.png" style="width: 100%; height: 100%"></a></li>
+                                    <li><a class="btn btn-social-icon btn-sm" href="https://www.dropbox.com/s/c2wfqnrjqjn9xok/052917GirishResume.pdf?dl=0"><img src="assets/images/cvicon1.png" style="width: 100%; height: 100%"></a></li>
                                 </ul>
                             </div>
-                            <hr style="max-width: 50%; height: 1px; background-color: gray; padding-left: 6%; padding-right: 6%; margin-top: 5%; margin-bottom: 0">
+                            <!--<hr style="max-width: 50%; height: 1px; background-color: gray; padding-left: 6%; margin-top: 5%; margin-bottom: 0">-->
                         </li>
                         <li><a href="#history" onclick="collapseNav()">About Me</a></li>
                         <li><a href="#corporate" onclick="collapseNav()">Experience</a></li>
@@ -596,6 +595,12 @@
         $('#myScrollspy .nav').affix({
             offset: {
                 top: $('#firstBackground').height() - 50
+            }
+        });
+
+        $('#smallNav').affix({
+            offset: {
+                top: $('#firstBackground').height() - 100
             }
         });
     </script>

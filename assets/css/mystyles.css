@@ -110,8 +110,16 @@
 }
 
 .affix {
-  top: 0;
-  width: 100%;
+  width: inherit;
+}
+
+ul#quickLinks li {
+  display:inline;
+}
+
+.horizontal-list {
+  margin: 0 auto;   /* Allow the centering to work */
+  padding: 0 auto;
 }
 
 .tileCaption h3 {
@@ -211,7 +219,7 @@ html {
 }
 
 #history b {
-  color: #c70057;
+  color: dimgray;
 }
 
 #corporate {

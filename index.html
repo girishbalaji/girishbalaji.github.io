@@ -413,7 +413,7 @@
                     </div>
                 </div>
 
-                <div class="row" style="background-color: ghostwhite; padding-top: 5%; padding-bottom: 5%">
+                <div class="row" style="background-color: #FAFAFA; padding-top: 5%; padding-bottom: 5%">
                     <div class="col-xs-12 col-sm-offset-1 col-sm-11">
                         <div class="row row-content" id="contactMe">
                             <div class="col-xs-12">
@@ -606,6 +606,22 @@
             }
         });
     </script>
+
+    <script>
+        $( window ).resize(function() {
+            $('#myScrollspy .nav').affix({
+                offset: {
+                    top: $('#firstBackground').height() - 50
+                }
+            });
+
+            $('#smallNav').affix({
+                offset: {
+                    top: $('#firstBackground').height() - 15
+                }
+            });
+        });
+    </script>
     <script>
         if( $("#xs-check").is(":visible") )
             $("#collapsible").removeClass("in");
@@ -629,6 +645,45 @@
         });
 
 
+    </script>
+
+    <script>
+        $('a[href*="#"]')
+        // Remove links that don't actually link to anything
+                .not('[href="#"]')
+                .not('[href="#0"]')
+                .click(function(event) {
+                    // On-page links
+                    if (
+                            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+                            &&
+                            location.hostname == this.hostname
+                    ) {
+                        // Figure out element to scroll to
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                        // Does a scroll target exist?
+                        if (target.length) {
+                            // Only prevent default if animation is actually gonna happen
+                            event.preventDefault();
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000, function() {
+                                // Callback after animation
+                                // Must change focus!
+                                /*
+                                var $target = $(target);
+                                $target.focus();
+                                if ($target.is(":focus")) { // Checking if the target was focused
+                                    return false;
+                                } else {
+                                    $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                                    $target.focus(); // Set focus again
+                                };*/
+                            });
+                        }
+                    }
+                });
     </script>
 
     <!--function() {

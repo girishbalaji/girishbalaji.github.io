@@ -421,7 +421,41 @@
                                 <hr style="background-color: black; width: 20%; height: 1px; margin-left: .15%; margin-top: 0">
                             </div>
                             <div class="col-xs-12 col-sm-9">
-                                <form action="mailto:girishb@berkeley.edu" method="post" enctype="text/plain" class="form-horizontal" role="form">
+                                <form method="POST" action="http://formspree.io/girishb@berkeley.edu">
+                                    <!--<input class="col-xs-6 col-xs-offset-3" type="email" name="email" placeholder="Your email">
+                                    <textarea class="col-xs-12 col-xs-offset-3" name="message" placeholder="Your message"></textarea>
+                                    <button class="col-xs-12 col-xs-offset-3" type="submit">Send</button>-->
+                                    <div class="form-group">
+                                        <label for="firstname" class="col-sm-2 control-label">First Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter First Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastname" class="col-sm-2 control-label">Last Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Last Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="emailid" class="col-sm-2 control-label">Email</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="feedback" class="col-sm-2 control-label">What do you want to talk about?</label>
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control" id="feedback" name="feedback" rows="12"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-primary">Submit!</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!--<form action="https://formspree.io/girishb@berkeley.edu" method="post" enctype="text/plain" class="form-horizontal" role="form">
                                     <div class="form-group">
                                         <label for="firstname" class="col-sm-2 control-label">First Name</label>
                                         <div class="col-sm-10">
@@ -478,7 +512,7 @@
                                             <button type="submit" class="btn btn-primary">Submit!</button>
                                         </div>
                                     </div>
-                                </form>
+                                </form>-->
                             </div>
                             <div class="col-xs-12 col-sm-3">
                                 <p style="padding:20px;"></p>

@@ -49,7 +49,7 @@
                                 <h1 id="firstSlideHeading">Girish Balaji</h1>
                                 <p id="firstSlideText">
                                     Welcome to my website!
-                                    <a href="assets/resume/082017GirishResume.pdf">[Resume]</a>
+                                    <a href="assets/resume/CurrentResume.pdf">[Resume]</a>
                                 </p>
                                 <a href="#history">
                                 <div onclick="" class="moreIcon hvr-sweep-to-bottom" style="border: solid darkslategrey 1px; padding: 10px; margin-top: 5px">
@@ -120,6 +120,39 @@
                             <h2 style="font-family: 'Roboto Slab'">Experience</h2>
                             <hr style="width: 50%; height: 1px; background-color: gray; margin-left: 0%; margin-top: 1%">
                             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                              <!-- Microsoft Panel -->
+                              <div class="panel panel-default">
+                                  <div class="panel-heading" role="tab" id="headingIntuit"  style="background-color: black; height: 100%; width: 100%">
+                                      <div class="row">
+                                          <div class="panel-title col-xs-8 col-sm-offset-2 col-sm-5 text-center vertical-center">
+                                              <a role="button" data-toggle="collapse"
+                                                 data-parent="#accordion" href="#microsoftpanel"
+                                                 aria-expanded="true" aria-controls="microsoftpanel">
+                                                  <h3 style="font-variant: small-caps">Microsoft</h3><h5><b>SOFTWARE ENGINEER INTERN</b></h5>
+                                                  <h5>May 2018 - Aug 2018</h5>
+                                                  <h5>Redmond, WA | www.microsoft.com</h5>
+                                                  <button type="button" class="btn btn-info btn-sm">
+                                                      <span class="glyphicon glyphicon-chevron-down"></span>
+                                                  </button></a>
+                                          </div>
+                                          <div class="col-xs-4
+                                           col-sm-offset-1 col-sm-3">
+                                              <img class="accordionLogo" src="assets/images/microsoftLogo.png">
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <!-- NOTE the class is 'collapse in' so this will be the one to show up'-->
+                                  <div role="tabpanel" class="panel-collapse collapse"
+                                       id="microsoftpanel"    aria-labelledby="headingMicrosoftPanel">
+                                      <div class="panel-body">
+
+                                          <p>> Worked on <b>Windows Core OS Team</b> to develop <b>C#/ASP.NET app></b> to search OS architecture composition</p>
+                                          <p>> Implemented <b>graph visualization</b> features to navigate package dependencies and determine potential package collisions</p>
+                                          <p>> Designed <b>caching scheme</b> and <b>NLP free-text search features</b> for enhanced UX</p>
+                                      </div>
+                                  </div>
+                              </div>
+
                                 <!-- Intuit Panel -->
                                 <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="headingIntuit"  style="background-color: black; height: 100%; width: 100%">
@@ -318,6 +351,25 @@
 
                             <div class="col-xs-12 col-sm-6 col-md-4" style="height: 33vh;">
                                 <div class="divImg">
+                                    <img class="projectImg" src="assets/images/turtlebotFollower.png">
+                                </div>
+                                <div onclick="" class="divImg topLayer">
+                                    <div class="tileCaption">
+                                        <h3>Robot Follower</h3>
+                                        <p>Robot designed with object segmentation algorithms and PID controller to follow the red folder .</p>
+                                        <p><b>Technologies: </b>ROS, Python</p>
+                                    </div>
+                                </div>
+                                <a href="https://cyin3.github.io/ee106a-final-project/">
+                                    <button class="btn btn-primary projectLink">
+                                        <div class="linkLabel">Contact me to learn more!&nbsp&nbsp&nbsp&nbsp</div>
+                                        <span class="glyphicon glyphicon-new-window" style="float: left"></span>
+                                    </button>
+                                </a>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 col-md-4" style="height: 33vh;">
+                                <div class="divImg">
                                     <img class="projectImg" src="assets/images/textEditor.png">
                                 </div>
                                 <div onclick="" class="divImg topLayer">
@@ -451,16 +503,9 @@
                                     </button>
                                 </a>
                             </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4" style="height: 33vh">
+                            <!--<div class="col-xs-12 col-sm-6 col-md-4" style="height: 33vh">
                                 <div class="divImg">
                                     <img src="assets/images/comingSoon.jpg" class="projectImg">
-                                </div>
-                                <!--<div onclick="" class="divImg topLayer">
-                                    <div class="tileCaption">
-                                        <h3>Voice Controlled Car</h3>
-                                        <p>Used supervised machine learning with analog signal processing for vocal car control</p>
-                                        <p><b>Technologies: </b>TI Launchpad, NumPy, C</p>
-                                    </div>
                                 </div>
 
                                 <a href="">
@@ -468,8 +513,8 @@
                                         <div class="linkLabel">Contact me to learn more!&nbsp&nbsp&nbsp</div>
                                         <span class="glyphicon glyphicon-new-window" style="float: left"></span>
                                     </button>
-                                </a>-->
-                            </div>
+                                </a>
+                            </div>-->
 
                         </div>
                     </div>
@@ -480,7 +525,7 @@
                         <h2><b>Skills</b></h2>
                         <p style="font-weight: 200">A glimpse of my skillset. Constantly aiming to expand this list.
                             Check out my
-                            <a href="assets/resume/082017GirishResume.pdf">resume</a>
+                            <a href="assets/resume/CurrentResume.pdf">resume</a>
                             to see more.
                         </p>
 
@@ -795,7 +840,7 @@
                                 <ul id="quickLinks" style="margin: auto; padding-left: 7%; top: 0; left: 0">
                                     <li><a class="btn btn-social-icon btn-linkedin btn-sm" href="https://www.linkedin.com/in/girish-balaji-53117710a?trk=hp-identity-name"><i class="fa fa-linkedin"></i></a></li>
                                     <li><a class="btn btn-social-icon btn-github btn-sm" href="https://www.github.com/girishbalaji"><i class="fa fa-github"></i></a></li>
-                                    <li><a class="btn btn-social-icon btn-sm" href="assets/resume/082017GirishResume.pdf"><img src="assets/images/cvicon1.png" style="width: 100%; height: 100%"></a></li>
+                                    <li><a class="btn btn-social-icon btn-sm" href="assets/resume/CurrentResume.pdf"><img src="assets/images/cvicon1.png" style="width: 100%; height: 100%"></a></li>
                                 </ul>
                             </div>
                             <!--<hr style="max-width: 50%; height: 1px; background-color: gray; padding-left: 6%; margin-top: 5%; margin-bottom: 0">-->
@@ -819,7 +864,7 @@
                             <ul id="quickLinks" style="margin: auto; top: 0; left: 0">
                                 <li><a class="btn btn-social-icon btn-linkedin btn-sm" href="https://www.linkedin.com/in/girish-balaji-53117710a?trk=hp-identity-name"><i class="fa fa-linkedin"></i></a></li>
                                 <li><a class="btn btn-social-icon btn-github btn-sm" href="https://www.github.com/girishbalaji"><i class="fa fa-github"></i></a></li>
-                                <li><a class="btn btn-social-icon btn-social-icon btn-sm" href="assets/resume/082017GirishResume.pdf"><img src="assets/images/cvicon1.png" style="width: 100%; height: 100%"></a></li>
+                                <li><a class="btn btn-social-icon btn-social-icon btn-sm" href="assets/resume/CurrentResume.pdf"><img src="assets/images/cvicon1.png" style="width: 100%; height: 100%"></a></li>
                             </ul>
                         </div>
                         <hr style="width: 75%; height: 1px; background-color: gray; padding-left: 6%; padding-right: 6%; margin-top: 5%; margin-bottom: 0">

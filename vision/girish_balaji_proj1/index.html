@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+  <meta name="author" content="name">
+  <meta name="description" content="description here">
+  <meta name="keywords" content="keywords,here">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+  <style type="text/css">
+    body {
+      font-family: 'Montserrat', sans-serif;
+      padding: 7% 15%
+    }
+    figure {
+      padding: 10px;
+      border: solid gray 1px;
+      text-align: center;
+      margin: auto;
+    }
+    figcaption {
+      margin: 20px;
+      max-width: 80%
+    }
+
+    figure img {
+      max-width: 80%
+    }
+
+  </style>
+  </head>
+  <body>
+    <!-- Centered Title -->
+    <div style="text-align: center">
+      <h1 style="font-variant: small-caps">Color Channel Alignmment: Images of the Russian Empire</h1>
+      <i>
+        <a href="https://inst.eecs.berkeley.edu/~cs194-26/fa18/hw/proj1/">(Project Web Page)</a>
+        : Colorizing the Prokudin-Gorskii photo collection. Given images taken with red, green, and blue filters, create an overlayed color image. </i>
+    </div>
+
+
+
+    <h3>Project Overview</h3>
+    In this project, we were given a set of images taken by Sergei Mikhailovich Prokudin-Gorskii in the early 1900s. Ahead of his time, he took pictures of countless landmarks using three expores of every scene using a red, blue, and green filter. While there was no way to integrate the three photographs into a singular color image at the time, our project today is to align the three images taken, layer them on top of each other, and then use the in-built Python libraries to display the images.
+
+    <h3> My approach </h3>
+
+    My approach to this project was to develop a script on Jupyter notebook that could successfully process a single image, and use the algorithm and techniques to develop abstractions that could generalize to all of the images in the data set. I used the boilerplate code provided and noticed all I needed to implement was the `align` function. I then shifted the first image 15 pixels vertically and horizontally and then overlayed the two images. For each of the displacements, I calculate a score that corresponded to the difference of the images (lower the score the closer the two images are aligned) and then use the displacement with the minimum score. This score function are based on those provided: SSD (sum of squared differences) and NCC (normalizd cross correlation).
+
+    <h3>Challenges</h3>
+
+    Once I completed the basic implementation, it worked well for the smaller images, but I underestimated how long it would actually take for the larger images. Then I proceeded to implement the pyramiding function.
+
+    I implemented pyramid aligning with an iterative approach as follows:
+
+
+    <p>
+      First I down sampled the two images by 50% until they were less than 300 pixels tall. I have a preset max_dispacement used to find the best vertical and horizontal dislacements for this blurriest image. Then I use the images one scale above, align the two images based on the displacements I found for the previous down sampled images, and then fine tune the adjustments. I continue this process until I've fine tuned the alignment for the original images.
+    </p>
+    <p>Here's how it works:</p>
+    <ul>
+      <li>Most downsampled (300px x 300px) ~ adjust by +- MAX_DISP (ex. 8).</p>
+      <li>Then, one level higher (600 x 600) ~ adjust by +- MAX_DISP / 2 (ex. 4) </p>
+      <li>Then, one level higher (1200 x 1200) ~ adjust by +- MAX_DISP / 4 (ex. 2) </p>
+      <li> .. until we fine tune the original image by 1 pixel</li>
+    </ul>
+    <p>
+      Another challenge I had was when I was calculating the score between two images, I originally used the whole images. But the black borders from the image, and the colorful borders from shifting the image added unncessary noise and made some images seem incorrectly more similar or different than they actually were. To solve this issue, I added another parameter called frame_size; I only compared a frame within each of the images a small subsction of the center of each image.
+    </p>
+
+
+    <h3> Results </h3>
+
+    <h4> Small Images </h4>
+
+    <figure>
+      <h3> Cathedral </h3>
+      <img src="out_cathedral.jpg">
+      <div style="margin-top: 10px">
+        <p><b>Loss Function:</b> Sum of squared distance</p>
+        <p><b>Green and Blue Displacement:</b> Vertical: 5; Horizontal: 2</p>
+        <p><b>Red and Blue Displacement:</b> Vertical: 12; Horizontal: 3</b> </p>
+      </div>
+    </figure>
+
+    <figure>
+      <h3> Monastery </h3>
+      <img src="out_monastery.jpg">
+      <div style="margin-top: 10px">
+        <p><b>Loss Function:</b> Normalized cross correlation</p>
+        <p><b>Green and Blue Displacement:</b> Vertical: -3; Horizontal: 2</p>
+        <p><b>Red and Blue Displacement:</b> Vertical: 3; Horizontal: 2</b> </p>
+      </div>
+    </figure>
+
+    <figure>
+      <h3> Settlers </h3>
+      <img src="out_settlers.jpg">
+      <div style="margin-top: 10px">
+        <p><b>Loss Function:</b> Normalized cross correlation</p>
+        <p><b>Green and Blue Displacement:</b> Vertical: 7; Horizontal: 0</p>
+        <p><b>Red and Blue Displacement:</b> Vertical: 14; Horizontal: -1</b> </p>
+      </div>
+    </figure>
+
+    <figure>
+      <h3> Nativity </h3>
+      <img src="out_nativity.jpg">
+      <div style="margin-top: 10px">
+        <p><b>Loss Function:</b> Normalized cross correlation</p>
+        <p><b>Green and Blue Displacement:</b> Vertical: 3; Horizontal: 1</p>
+        <p><b>Red and Blue Displacement:</b> Vertical: 8; Horizontal: 0</b> </p>
+      </div>
+    </figure>
+
+    <h4> Large Images </h4>
+
+    <figure>
+      <h3> Harvesters </h3>
+      <img src="out_harvesters.jpg">
+      <div style="margin-top: 10px">
+        <p><b>Loss Function:</b> Normalized cross correlation</p>
+        <p><b>Green and Blue Displacement:</b> Vertical: 58; Horizontal: 16</p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+        <p><b>Red and Blue Displacement:</b> Vertical: 124; Horizontal: 16</b> </p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+      </div>
+    </figure>
+
+    <figure>
+      <h3> Emir </h3>
+      <img src="out_emir-bw-1.jpg">
+      <div style="margin-top: 10px">
+        <p><b>Loss Function:</b> Normalized cross correlation</p>
+        <p><b>Green and Blue Displacement:</b> Vertical: 47; Horizontal: 23</p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+        <p><b>Red and Blue Displacement:</b> Vertical: 236; Horizontal: -198</b> </p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+        <p>This solution actually required me to use an edge detector.
+          For the original image without edge detection, please refer to the
+          bells and whistles sections for the comparison betweent the
+          non-edge detection image and the enhanced image.
+        </p>
+      </div>
+    </figure>
+
+    <figure>
+      <h3> Icon </h3>
+      <img src="out_icon.jpg">
+      <div style="margin-top: 10px">
+        <p><b>Loss Function:</b> Normalized cross correlation</p>
+        <p><b>Green and Blue Displacement:</b> Vertical: 40; Horizontal: 18</p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+        <p><b>Red and Blue Displacement:</b> Vertical: 88; Horizontal: 23</b> </p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+      </div>
+    </figure>
+
+    <figure>
+      <h3> Lady </h3>
+      <img src="out_lady.jpg">
+      <div style="margin-top: 10px">
+        <p><b>Loss Function:</b> Normalized cross correlation</p>
+        <p><b>Green and Blue Displacement:</b> Vertical: 51; Horizontal: 6</p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+        <p><b>Red and Blue Displacement:</b> Vertical: 111; Horizontal: 8</b> </p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+      </div>
+    </figure>
+
+    <figure>
+      <h3> Self Portrait </h3>
+      <img src="out_self_portrait.jpg">
+      <div style="margin-top: 10px">
+        <p><b>Loss Function:</b> Normalized cross correlation</p>
+        <p><b>Green and Blue Displacement:</b> Vertical: 77; Horizontal: 29</p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+        <p><b>Red and Blue Displacement:</b> Vertical: 175; Horizontal: 37</b> </p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+        <p><b>Note:</b> for this particular image,
+        I had to increase the scanning area.
+        For all other images, after downscaling, I would scan
+        a displacement of +/- 8 pixels. But for this image,
+        I search +/- 16 pixels. `MAX_DISP` = 16 this time.
+        </p>
+      </div>
+    </figure>
+
+    <figure>
+      <h3> Three Generations </h3>
+      <img src="out_three_generations.jpg">
+      <div style="margin-top: 10px">
+        <p><b>Loss Function:</b> Normalized cross correlation</p>
+        <p><b>Green and Blue Displacement:</b> Vertical: 48; Horizontal: 16</p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+        <p><b>Red and Blue Displacement:</b> Vertical: 108; Horizontal: 11</b> </p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+      </div>
+    </figure>
+
+    <figure>
+      <h3> Train </h3>
+      <img src="out_train.jpg">
+      <div style="margin-top: 10px">
+        <p><b>Loss Function:</b> Normalized cross correlation</p>
+        <p><b>Green and Blue Displacement:</b> Vertical: 42; Horizontal: 6</p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+        <p><b>Red and Blue Displacement:</b> Vertical: 84; Horizontal: 32</b> </p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+      </div>
+    </figure>
+
+    <figure>
+      <h3> Turkmen </h3>
+      <img src="out_turkmen.jpg">
+      <div style="margin-top: 10px">
+        <p><b>Loss Function:</b> Normalized cross correlation</p>
+        <p><b>Green and Blue Displacement:</b> Vertical: 56; Horizontal: 22</p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+        <p><b>Red and Blue Displacement:</b> Vertical: 116; Horizontal: 28</b> </p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+      </div>
+    </figure>
+
+    <figure>
+      <h3> Village </h3>
+      <img src="out_village.jpg">
+      <div style="margin-top: 10px">
+        <p><b>Loss Function:</b> Normalized cross correlation</p>
+        <p><b>Green and Blue Displacement:</b> Vertical: 64; Horizontal: 12</p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+        <p><b>Red and Blue Displacement:</b> Vertical: 136; Horizontal: 22</b> </p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+      </div>
+    </figure>
+
+    <h4>Bonus Pictures</h4>
+    <figure>
+      <h3> Chapel where Ivan the Terrible's Son was Born! </h3>
+      <img src="out_chapel_ivan.jpg">
+      <div style="margin-top: 10px">
+        <p><b>Loss Function:</b> Normalized cross correlation</p>
+        <p><b>Green and Blue Displacement:</b> Vertical: 70; Horizontal: -3</p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+        <p><b>Red and Blue Displacement:</b> Vertical: 121; Horizontal: -23</b> </p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+      </div>
+    </figure>
+
+    <figure>
+      <h3> Floodgate and guardhouse of the M.P.S.</h3>
+      <img src="out_floodgate.jpg">
+      <div style="margin-top: 10px">
+        <p><b>Link:</b> http://www.loc.gov/pictures/collection/prok/item/prk2000000005/</p>
+        <p><b>Loss Function:</b> Normalized cross correlation</p>
+        <p><b>Green and Blue Displacement:</b> Vertical: 70; Horizontal: -3</p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+        <p><b>Red and Blue Displacement:</b> Vertical: 121; Horizontal: -23</b> </p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+        <p><b>Note: </b>this is at the Ministry of Communication and Transportation at Belyie Ozerki </p>
+      </div>
+    </figure>
+
+    <figure>
+      <h3> Monument </h3>
+      <img src="out_monument.jpg">
+      <div style="margin-top: 10px">
+        <p><b>Loss Function:</b> Normalized cross correlation</p>
+        <p><b>Green and Blue Displacement:</b> Vertical: 1; Horizontal: -1</p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+        <p><b>Red and Blue Displacement:</b> Vertical: 7; Horizontal: -2</b> </p>
+        <p>Downscaled 4 times during pyramid aligning.</p>
+      </div>
+    </figure>
+
+    <h3>Bells and Whistles</h3>
+
+    <h4>Edge Detection</h4>
+    <table style="width: 100%">
+      <tr>
+        <td>
+          <figure>
+            <h3> Original Aligned Emir (no edge detection) </h3>
+            <img src="out_emir.jpg">
+            <div style="margin-top: 10px">
+              <p><b>Loss Function:</b> Normalized cross correlation</p>
+              <p><b>Green and Blue Displacement:</b> Vertical: 47; Horizontal: 23</p>
+              <p>Downscaled 4 times during pyramid aligning.</p>
+              <p><b>Red and Blue Displacement:</b> Vertical: 236; Horizontal: -198</b> </p>
+              <p>Downscaled 4 times during pyramid aligning.</p>
+            </div>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <h3> Aligned Emir (with Canny edge detection) </h3>
+            <img src="out_emir-bw-sigma-1.jpg">
+            <div style="margin-top: 10px">
+              <p><b>Loss Function:</b> Normalized cross correlation</p>
+              <p><b>Green and Blue Displacement:</b> Vertical: 48; Horizontal: 23</p>
+              <p>Downscaled 4 times during pyramid aligning.</p>
+              <p><b>Red and Blue Displacement:</b> Vertical: 105; Horizontal: 40</b> </p>
+              <p>Downscaled 4 times during pyramid aligning.</p>
+            </div>
+          </figure>
+        </td>
+      </tr>
+    </table>
+    <p>
+      Notice how the Green and Blue images were already aligned perfectly
+      originally. The Red and Blue filtered images are the problem. Once we
+      take an image with everything filtered except its edges, it works. Let's
+      take a look at what the edges look like
+    </p>
+
+    <table style="width: 100%">
+      <tr>
+        <td>
+          <figure>
+            <h3> Emir filtered Red with Canny Edge Detector Applied </h3>
+            <img src="emir-edge-red-sigma-1.png">
+            <div style="margin-top: 10px">
+              <p><b>Canny Sigma Parameter:</b> 1</p>
+            </div>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <h3> Emir filtered Blue with Canny Edge Detector Applied </h3>
+            <img src="emir-edge-blue-sigma-1.png">
+            <div style="margin-top: 10px">
+              <p><b>Canny Sigma Parameter:</b> 1</p>
+            </div>
+          </figure>
+        </td>
+      </tr>
+    </table>
+
+    The Canny edge detector uses a variance parameter which you can use
+    to specify how sensitive you want the edge detector to be. If you set
+    a high standard deviation it returns fewer pixels indicated to be part
+    of an edge.
+
+    <table style="width: 100%">
+      <tr>
+        <td>
+          <figure>
+            <h3> Emir filtered Red with Canny Edge Detector Applied </h3>
+            <img src="emir-edge-red-sigma-5.png">
+            <div style="margin-top: 10px">
+              <p><b>Canny Sigma Parameter:</b> 5</p>
+            </div>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <h3> Emir filtered Blue with Canny Edge Detector Applied </h3>
+            <img src="emir-edge-blue-sigma-5.png">
+            <div style="margin-top: 10px">
+              <p><b>Canny Sigma Parameter:</b> 1</p>
+            </div>
+          </figure>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      Let's look at the difference in image quality with a sigma of 5 instead of 1
+    </p>
+
+    <table style="width: 100%">
+      <tr>
+        <td>
+          <figure>
+            <h3> Original Aligned Emir (no edge detection) </h3>
+            <img src="out_emir.jpg">
+            <div style="margin-top: 10px">
+              <p><b>Loss Function:</b> Normalized cross correlation</p>
+              <p><b>Green and Blue Displacement:</b> Vertical: 47; Horizontal: 23</p>
+              <p>Downscaled 4 times during pyramid aligning.</p>
+              <p><b>Red and Blue Displacement:</b> Vertical: 236; Horizontal: -198</b> </p>
+              <p>Downscaled 4 times during pyramid aligning.</p>
+            </div>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <h3> Aligned Emir (with Canny edge detection - Sigma - 5) </h3>
+            <img src="out_emir-bw-sigma-5.jpg">
+            <div style="margin-top: 10px">
+              <p><b>Loss Function:</b> Normalized cross correlation</p>
+              <p><b>Green and Blue Displacement:</b> Vertical: 47; Horizontal: 23</p>
+              <p>Downscaled 4 times during pyramid aligning.</p>
+              <p><b>Red and Blue Displacement:</b> Vertical: 107; Horizontal: 40</b> </p>
+              <p>Downscaled 4 times during pyramid aligning.</p>
+            </div>
+          </figure>
+        </td>
+      </tr>
+    </table>
+    <p>The differences are minimal with this change.</p>
+
+    <h4>Histogram Equalization</h4>
+    <table style="width: 100%">
+      <tr>
+        <td>
+          <figure>
+            <h3> Original Aligned Lady (no Histogram Equalization) </h3>
+            <img src="out_lady.jpg">
+            <div style="margin-top: 10px">
+              <p>
+                <b>Note:</b> Note that this picture is kind of dim. We can se
+              from a histogram that most of the pixels are centered
+              the lower end of the 0 .. 255 spectrum.
+              </p>
+            </div>
+          </figure>
+        </td>
+        <td>
+          <figure>
+            <h3> Aligned Lady (with histogram equalization) </h3>
+            <img src="out_lady-bw-hist-eq.jpg">
+            <div style="margin-top: 10px">
+              <p><b>Note:</b> The original images have been equalized</p>
+              <br \><br \><br \>
+            </div>
+          </figure>
+        </td>
+      </tr>
+    </table>
+    <p>Note this was implemented using the skimage libraries provided</p>
+
+  </body>
+
+</html>

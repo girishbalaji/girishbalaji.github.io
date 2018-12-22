@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+  <meta name="author" content="name">
+  <meta name="description" content="description here">
+  <meta name="keywords" content="keywords,here">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+  <style type="text/css">
+    body {
+      font-family: 'Montserrat', sans-serif;
+      padding: 7% 15%
+    }
+    figure {
+      padding: 10px;
+      border: solid gray 1px;
+      text-align: center;
+      margin: auto;
+    }
+    figcaption {
+      margin: 20px;
+      max-width: 80%
+    }
+
+    figure img {
+      max-width: 80%
+    }
+
+    .row img {
+      width: 100%
+    }
+
+    .row {
+      border: solid gray 1px;
+    }
+
+  </style>
+  </head>
+  <body>
+    <!-- Centered Title -->
+    <div style="text-align: center">
+      <h1 style="font-variant: small-caps">Fun with Frequencies and Gradients!</h1>
+      <i>CS194-26 Proj 3
+        <a href="https://inst.eecs.berkeley.edu/~cs194-26/fa18/hw/proj3/">(Project Web Page)</a>
+        : Gradient and Frequency Image Manipulation </i>
+
+    </div>
+
+
+
+    <h3>Project Overview</h3>
+    In this project, we used various image processing techniques to do image blending, partial morphing and frequency analysis using the properties of discrete gradients and the fourier domain.
+
+    <h3> Part 1.1: Image Sharpening </h3>
+
+    <p>This part of the project required taking interesting blurry images and using an unsharp mask, try to sharpen the image.</p>
+
+    <p>Effectively the math is straigtforward and is as follows:
+    for a blurry image b, apply a gaussian blur and get a even blurrier image g. Calculate the difference between b and g and add the difference back to b. This effectively adds definition to the features of the image that 'survived' the Gaussian blur so it should theoretically sharpen the key characteristics of the image.</p>
+
+    <p>Another way to think about it is the Gaussian blurr is a low pass filter. The Gaussian blur subtracted from the dirac identity (the funciton to get the original image we subtract from) is a laplcian filter which is a high pass filter. Applying a high pass filter to the original image accentuates the high frequency features such as edges and corners so this adds definition when added back to the original image.</p>
+
+    <h4>Kareem Abdul Jabbar</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Original Kareem</b>
+        <img src="part1_1/data/1_1_kareem.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>Sharpened Kareem</b>
+        <img src="part1_1/output/sharp_kareem.jpg">
+      </div>
+    </div>
+
+    <h4>Magic Johnson</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Original Magic</b>
+        <img src="part1_1/data/1_1_magic.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>Sharpened Magic</b>
+        <img src="part1_1/output/sharp_magic.jpg">
+      </div>
+    </div>
+
+    These were taken off of Youtube. I was watching some of the low quality low highlights and thought it'd be cool to try to sharpen them.
+
+
+    <h3>Part 1.2: Hybrid Images</h3>
+
+    <p>For hybrid images, we want to merge two images so that you can see only one of the two or both overlayed depenind on how far you are. The concept is simple. From the previous part, we know a Gaussian filter is a high pass filter and laplacian is a low pass filter. If we apply a low pass on one image, high pass on another and add them together, we will get the desired hybridized affect.</p>
+
+    <p> Code was provided to align the images before the filters were appleid</p>
+
+    <h4>Derek + Cat</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Original Derek</b>
+        <img src="part1_23/data/DerekPicture.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>Original Cat</b>
+        <img src="part1_23/data/nutmeg.jpg">
+      </div>
+    </div>
+
+    <h4>Hybrid Derek + Car</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Derek and Cat Black and White</b>
+        <img src="part1_23/output/DerekCatBW.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>Derek and Cat RGB</b>
+        <img src="part1_23/output/DerekCatRGB.jpg">
+      </div>
+    </div>
+
+    <h4>Visualization of Derek + Cat in Fourier Domain</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Derek with High Pass</b>
+        <img src="part1_23/output/DerekCathpffft.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>Cat with Low Pass</b>
+        <img src="part1_23/output/DerekCatlpffft.jpg">
+      </div>
+    </div>
+
+
+    <h4>Snoopy + SnoopDogg</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Original Snoopy</b>
+        <img src="part1_23/data/Snoopy.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>Original SnoopDogg</b>
+        <img src="part1_23/data/SnoopDogg.jpg">
+      </div>
+    </div>
+
+    <h4>Hybrid Snoopy + SnoopDogg</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Snoopy + SnoopDogg Black and White</b>
+        <img src="part1_23/output/SnoopySnoopDoggBW.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>Snoopy + SnoopDogg RGB</b>
+        <img src="part1_23/output/SnoopySnoopDoggRGB.jpg">
+      </div>
+    </div>
+
+    <h4>Visualization of Snoopy + SnoopDogg in Fourier Domain</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Snoopy with High Pass</b>
+        <img src="part1_23/output/SnoopySnoopDogghpffft.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>SnoopDogg with Low Pass</b>
+        <img src="part1_23/output/SnoopySnoopDogglpffft.jpg">
+      </div>
+    </div>
+
+
+    <h4>Prius + Camaro</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Original Prius</b>
+        <img src="part1_23/data/prius.jpeg">
+      </div>
+      <div class="col-sm-6">
+        <b>Original Camaro</b>
+        <img src="part1_23/data/camaro.jpeg">
+      </div>
+    </div>
+
+
+    <h4>A Sporty Hybrid! Hybrid Prius + Camaro</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Prius + Camaro Black and White</b>
+        <img src="part1_23/output/camaropriushybridBW.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>Prius + Camaro RGB</b>
+        <img src="part1_23/output/camaropriushybridRGB.jpg">
+      </div>
+    </div>
+
+    <h4>FAILED PRIUS + CAMARO</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Prius + Camaro Failed</b>
+        <img src="part1_23/output/failedpriuscamaro.jpg">
+      </div>
+    </div>
+
+    <h4>Visualization of Prius + Camaro in Fourier Domain</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Prius with High Pass</b>
+        <img src="part1_23/output/camaropriushybridhpffft.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>Camaro with Low Pass</b>
+        <img src="part1_23/output/camaropriushybridlpffft.jpg">
+      </div>
+    </div>
+
+    <h3> Part 1.3 Gaussian and Laplacian Stacks</h3>
+
+    <p>This section visualizes the laplacian and the gaussian applied repeatedly to the image of interest. If we apply it to any hybridized image, we should be able to see the source images that make up the hybridized image </p>
+
+    <h4>Visualization of Guassian and Laplacian Pyramids</h4>
+    <div class="row">
+      <div class="col-sm-12">
+        <b>Derek Cat Pyramid</b>
+        <img src="part1_23/output/pyramid_DerekCat.jpg">
+      </div>
+      <div class="col-sm-12">
+        <b>Snoopy Snoop Dogg Pyramid</b>
+        <img src="part1_23/output/pyramid_SnoopySnoop.jpg">
+      </div>
+      <div class="col-sm-12">
+        <b>Cheetah Pyramid</b>
+        <img src="part1_23/output/pyramid_cheetah.jpg">
+      </div>
+    </div>
+
+    <p> Why a cheetah? Because I thought their extra blur and seeing their edges running fast would look cool</p>
+    <h3> Part 1.4 </h3>
+    <p> Now we'll try to blend two images across a particular line. </p>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Oraple</b>
+        <img src="part1_4/output/oraple.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>Clownshark</b>
+        <img src="part1_4/output/clownshark.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>Camaro Prius</b>
+        <img src="part1_4/output/camroprius.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>Shark Swimming</b>
+        <img src="part1_4/output/swimshark.jpg">
+      </div>
+    </div>
+
+    <p> Here's the pyramid for an the clownshark</p>
+    <div class="row">
+      <div class="col-sm-12">
+        <b>Clownshark Pyramid</b>
+        <img src="part1_23/output/pyramid_clownshark.jpg">
+      </div>
+    </div>
+
+    <p>You can kind of see the details of both the clownfish and the shark as they came together</p>
+
+    <h2> Part 2: Gradient Domain Fushion </h2>
+
+    <h3> Part 2.1: Toy Problem</h3>
+    <p> In this part of the project, I simply used the toy image and reconstructed using itself as the background</p>
+
+    <p>The point of this part of the project is to implement Poisson pyramid blending. The idea behind this type of blending is to try to place a source image in a particular specific location in the other image. Ideally, we would have trimmed the source image accordingly and get rid of the extraneous borders. But, this technique still works with a limited boundary. Assume the source image was in a very bright area, while the background image is in a dark area. One important fact decided empirically is that humans cannot really discern the intrinsic brightness of an object. Rather, they identify and segment objects based on relative differences i.e. the gradients. So we can reshade the source image so that it kind of matches the relative intensity of the background and maintains the intrinsic changes in pixel intensity. </p>
+
+    <p>It worked</p>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Toy Example from Data .jpg</b>
+        <img src="part2_1/data/toy_problem.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>Toy Example Generated From Algorithm </b>
+        <img src="part2_1/output/toyexample.jpg">
+      </div>
+    </div>
+
+    <h3> Part 2.2: Poisson Blending</h3>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Penguin Injection</b>
+        <img src="part2_2/output/final_original_penguins.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>Toy Example Generated From Algorithm </b>
+        <img src="part2_2/output/final_penguins.jpg">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <b>My friend, Kavi, in Trump's State of the Union original</b>
+        <img src="part2_2/output/final_original_kavitrump.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>My friend, Kavi, in the State of the Union</b>
+        <img src="part2_2/output/final_kavitrump.jpg">
+      </div>
+    </div>
+
+    <p>This one does not look as good because of the source iamges background and high contrast as opposed to the background, but you can see the adjustments made to try to get Kavi to fit in</p>
+
+
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Putting a shark in a pool</b>
+        <img src="part2_2/output/final_original_sharkswimming.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>The shark is in the pool!</b>
+        <img src="part2_2/output/final_shark_swimming.jpg">
+      </div>
+    </div>
+
+    <p>The shark in the pool is pretty cool</p>
+
+    <p> The source image and background image:</p>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Source Shark</b>
+        <img src="part2_2/data/personswimming.jpg">
+      </div>
+      <div class="col-sm-6">
+        <b>Background Pool</b>
+        <img src="part2_2/data/shark1.jpg">
+      </div>
+    </div>
+
+    <p>The image integration works as follows. We basically set up an optimization problem. For every pixel, you try to measure the difference between the current pixel and the adjacent pixels, and try to set up the optimization problem so that the difference between each pixel and each of the adjacent pixels is as close to the difference between the pixels in the background image.  </p>
+
+    <p>Why the shark image works? It works because the background color of both images was pretty similar and uniform. The fact that the colors were the same was probably not main reason for the succesfful integration but rather the gradients of the backgrounds were in the same. The one that turned down very poorly was the one where I tried to put my friend Kavi's face on Trumps state of the union speech. It was largely because of the background that was in a white classroom and he stood out whereas in the state of the union the people did not really stand out relative to the background. So everytime I tried to adjust the source intensity using gradient matching, he would turn out really dark relative to the background--way darker than the other people in the screen. I then tried to add a bunch of black to the background of his image so that he stood out lesss but due to my lack of artistic capability he turned out glowing. For the shark and swimmer, I tried multiple locations, tried to match histograms by equalizing both, and then put the shark on the swimming pool. </p>
+
+    <p>Which approach works best--the one above or the one below? This or the multiresolution blending? Definitely this one because I could adjust the location, not just blur the edges to make it seem continuous so don't lose details. Though the shark swimmer below looks pretty neat</p>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Shark Swimming</b>
+        <img src="part1_4/output/swimshark.jpg">
+      </div>
+    </div>
+
+
+
+  </body>
+
+</html>

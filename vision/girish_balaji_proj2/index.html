@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+  <meta name="author" content="name">
+  <meta name="description" content="description here">
+  <meta name="keywords" content="keywords,here">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+  <style type="text/css">
+    body {
+      font-family: 'Montserrat', sans-serif;
+      padding: 7% 15%
+    }
+    figure {
+      padding: 10px;
+      border: solid gray 1px;
+      text-align: center;
+      margin: auto;
+    }
+    figcaption {
+      margin: 20px;
+      max-width: 80%
+    }
+
+    figure img {
+      max-width: 80%
+    }
+
+    .row img {
+      width: 100%
+    }
+
+    .row {
+      border: solid gray 1px;
+    }
+
+  </style>
+  </head>
+  <body>
+    <!-- Centered Title -->
+    <div style="text-align: center">
+      <h1 style="font-variant: small-caps">Building a Pinhole Camera</h1>
+      <i>CS194-26 Proj 2
+        <a href="https://inst.eecs.berkeley.edu/~cs194-26/fa18/hw/proj2/">(Project Web Page)</a>
+        : Building a Pinhole Camera </i>
+
+    </div>
+
+
+
+    <h3>Project Overview</h3>
+    In this project, my partner and I built a pinhole camera. "The pinhole camera (also called the "camera obscura") is essentially a dark box with a pinhole on one face, and a screen on the opposite face. Light reflecting off an object is directed through the pinhole to the screen, and an inverted image of the object forms on the screen". It basically uses simple optics allowing the light raws to go through a focused hole, and the rays are projected on the back of the shoe box." - CS194 UC Berkeley
+
+    Group Members: Girish Balaji, Ram Kalidhindi
+    
+    <h3> My approach </h3>
+
+    My approach to this project was to follow the directions on the project spec:
+    <ul>
+      <li>I got a cardboard box, </li>
+      <li>cut the holes as specified
+      <li>taped black paper over all the internal faces besides the face opposite the camera hole,</li>
+      <li>taped white paper on the hole where the projection of the light rays is meant to illuminate</li>
+    </ul>
+
+    <h3> Results </h3>
+
+    <p>How did the pinhole size affect the image output? Basically until between an open hole with no pinhole to a 3mm pinohole, the resolution continued to go up. However, every pinhole size reduction resulted in a significant decrease in brightness. The decrease in brightness made it very difficult to discern the details in these darker images. Because of this brightness reduction, the 5mm ended up being the most effective. It actually produced a higher resolution than the open hole with no pinhole cover.</p>
+
+    <h4>Campanile</h4>
+    <div class="row">
+      <div class="col-sm-4">
+        <b>iPhone</b>
+        <img src="proj2-cleaned/campanile.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: Open ~3x3cm square</b>
+        <img src="proj2-cleaned/open-campanile.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 5 mm</b>
+        <img src="proj2-cleaned/5mm-campanile.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 3 mm</b>
+        <img src="proj2-cleaned/3mm-campanile.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 1 mm</b>
+        <img src="proj2-cleaned/1mm-campanile.jpeg">
+      </div>
+    </div>
+
+    <h4>Soda</h4>
+    <div class="row">
+      <div class="col-sm-4">
+        <b>iPhone</b>
+        <img src="proj2-cleaned/soda.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: Open ~3x3cm square</b>
+        <img src="proj2-cleaned/open-soda.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 5 mm</b>
+        <img src="proj2-cleaned/5mm-soda.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 3 mm</b>
+        <img src="proj2-cleaned/3mm-soda.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 1 mm</b>
+        <img src="proj2-cleaned/1mm-soda.jpeg">
+      </div>
+    </div>
+
+    <h4>Doe</h4>
+    <div class="row">
+      <div class="col-sm-4">
+        <b>iPhone</b>
+        <img src="proj2-cleaned/doe.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: Open ~3x3cm square</b>
+        <img src="proj2-cleaned/open-doe.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 5 mm</b>
+        <img src="proj2-cleaned/5mm-doe.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 3 mm</b>
+        <img src="proj2-cleaned/3mm-doe.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 1 mm</b>
+        <img src="proj2-cleaned/1mm-doe.jpeg">
+      </div>
+    </div>
+
+    <h4>Sproul</h4>
+    <div class="row">
+      <div class="col-sm-4">
+        <b>iPhone</b>
+        <img src="proj2-cleaned/sproul.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: Open ~3x3cm square</b>
+        <img src="proj2-cleaned/open-sproul.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 5 mm</b>
+        <img src="proj2-cleaned/5mm-sproul.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 3 mm</b>
+        <img src="proj2-cleaned/3mm-sproul.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 1 mm</b>
+        <img src="proj2-cleaned/1mm-sproul.jpeg">
+      </div>
+    </div>
+
+    <h4>Traffic</h4>
+    <div class="row">
+      <div class="col-sm-4">
+        <b>iPhone</b>
+        <img src="proj2-cleaned/traffic.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: Open ~3x3cm square</b>
+        <img src="proj2-cleaned/open-traffic.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 5 mm</b>
+        <img src="proj2-cleaned/5mm-traffic.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 3 mm</b>
+        <img src="proj2-cleaned/3mm-traffic.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 1 mm</b>
+        <img src="proj2-cleaned/1mm-traffic.jpeg">
+      </div>
+    </div>
+
+    <h4>House</h4>
+    <div class="row">
+      <div class="col-sm-4">
+        <b>iPhone</b>
+        <img src="proj2-cleaned/house.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: Open ~3x3cm square</b>
+        <img src="proj2-cleaned/open-house.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 5 mm</b>
+        <img src="proj2-cleaned/5mm-house.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 3 mm</b>
+        <img src="proj2-cleaned/3mm-house.jpeg">
+      </div>
+      <div class="col-sm-4">
+        <b>Width: 1 mm</b>
+        <img src="proj2-cleaned/1mm-house.jpeg">
+      </div>
+    </div>
+
+    <h3> Which pinhole is the best? </h3>
+    <h5>The best image results were produced by the 5mm pinhole. Note, we believe that the theoretical ideal resolution may be around 3mm given our dimesions but the lack of light for the lower dimensions makes 5mm the clear winner</h5>
+
+    <h3> The best results: 5mm </h3>
+    <i>Post processing includes taking the 5 mm outputs, cropping the image, equalizing the histogram intensity, denoising the output, and possibly increasing the brightness if necessary.</i>
+    <i>We'll go in to details after displaying the results</i>
+
+    <h4>House</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>The 5mm snapshot</b>
+        <img src="proj2-cleaned/5mm-house.jpeg">
+      </div>
+      <div class="col-sm-6">
+        <b>Post processing</b>
+        <img src="proj2-cleaned/best-house.jpeg">
+      </div>
+    </div>
+
+    <h4>Soda</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>The 5mm snapshot</b>
+        <img src="proj2-cleaned/5mm-soda.jpeg">
+      </div>
+      <div class="col-sm-6">
+        <b>Post processing</b>
+        <img src="proj2-cleaned/best-soda.jpeg">
+      </div>
+    </div>
+
+    <h4>Sproul</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>The 5mm snapshot</b>
+        <img src="proj2-cleaned/5mm-sproul.jpeg">
+      </div>
+      <div class="col-sm-6">
+        <b>Post processing</b>
+        <img src="proj2-cleaned/best-sproul.jpeg">
+      </div>
+    </div>
+
+    <h4>Traffic</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>The 5mm snapshot</b>
+        <img src="proj2-cleaned/5mm-traffic.jpeg">
+      </div>
+      <div class="col-sm-6">
+        <b>Post processing</b>
+        <img src="proj2-cleaned/best-traffic.jpeg">
+      </div>
+    </div>
+
+    <h4>Campanile</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>The 5mm snapshot</b>
+        <img src="proj2-cleaned/5mm-campanile.jpeg">
+      </div>
+      <div class="col-sm-6">
+        <b>Post processing</b>
+        <img src="proj2-cleaned/best-campanile.jpeg">
+      </div>
+    </div>
+
+    <h4>Doe</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>The 5mm snapshot</b>
+        <img src="proj2-cleaned/5mm-doe.jpeg">
+      </div>
+      <div class="col-sm-6">
+        <b>Post processing</b>
+        <img src="proj2-cleaned/best-doe.jpeg">
+      </div>
+    </div>
+
+    <h3>How'd I do it?</h3>
+    <p>The first part of the solution is cropping. While most of the pinhole camera outputs were in the same cropping requirements, I did this manually because there were a few that were different. After cropping I flipped the image because the image projected in the back of the shoe box is upside down</p>
+
+    <p>Second step is histogram equalization. I would use the cropped area and use skimage to distribute the pixel intensity uniformly from 0 to 255. This is necessary because the images are generally dark and centered in the bottom side of the spectrum. Histogram equalization would make it possible to discern details that were previously not visible. Sometimes the brightness would be too low as it was often sunny outside so I increased the brightness of these images.</p>
+
+    <p>Final step: denoising and sharpening. For denoising I used some of the traditional techniques available. I was familiar with adaptive median filtering but I found other denoising algorithms on skimage: wavelet denoising and bilateral denoising that were far more effective. For the sharpening for the image, I applied a laplacian filter over the image, scaled it by a tuned parameter, and then added it to the original image. Below is an example of the effect of denoising. The details are not very apparent but it makes a larger difference at lower resolutions.</p>
+
+    <h4>Denoising Effect</h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Pre denoising</b>
+        <img src="proj2-cleaned/pre-denoising-example.jpeg">
+      </div>
+      <div class="col-sm-6">
+        <b>Post denoising</b>
+        <img src="proj2-cleaned/post-denoising-example.jpeg">
+      </div>
+    </div>
+
+    <h2>Pinhole Camera Setup</h2>
+    Here are images on how our box was setup
+
+    <div class="row">
+      <div class="col-sm-6">
+        <b>Figure 1</b>
+        <img src="proj2-ground-truth-data/box1.jpeg">
+      </div>
+      <div class="col-sm-6">
+        <b>Figure 2</b>
+        <img src="proj2-ground-truth-data/box2.jpeg">
+      </div>
+      <div class="col-sm-6">
+        <b>Figure 3</b>
+        <img src="proj2-ground-truth-data/box3.jpeg">
+      </div>
+      <div class="col-sm-6">
+        <b>Figure 4</b>
+        <img src="proj2-ground-truth-data/box4.jpeg">
+      </div>
+      <div class="col-sm-6">
+        <b>Figure 5</b>
+        <img src="proj2-ground-truth-data/box5.jpeg">
+      </div>
+      <div class="col-sm-6">
+        <b>Figure 6</b>
+        <img src="proj2-ground-truth-data/box6.jpeg">
+      </div>
+    </div>
+
+    <h3>Design Innovation</h3>
+    Notice in <b>Figure 1</b> the holder we developed along the hole where the pinhole goes.
+    This made it very easy to switch out pinholes!
+
+  </body>
+
+</html>
